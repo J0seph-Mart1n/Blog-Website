@@ -259,7 +259,7 @@ def receive_data():
         connection.starttls()
         connection.login(user=my_email, password=password)
         connection.sendmail(
-            from_addr=my_email,
+            from_addr=email,
             to_addrs=my_email,
             msg=f"Subject:Blog Contact Form\n\nName: {name}\nEmail: {email}\nPhone: {phone}\nMessage: {message}"
         )
