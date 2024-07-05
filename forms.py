@@ -22,7 +22,7 @@ class RegisterForm(FlaskForm):
 
 # TODO: Create a LoginForm to login existing users
 class LoginForm(FlaskForm):
-    email = StringField("Email", validators=[DataRequired(), Email(message="Enter a valid Email")])
+    email = EmailField("Email", validators=[DataRequired()])
     password = PasswordField("Password", validators=[DataRequired()])
     submit = SubmitField("Let me in")
 
