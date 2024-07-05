@@ -6,6 +6,7 @@
 
 instance/
 posts.db
+Procfile
 
 ### Also any macOS specific files
 .DS_Store
