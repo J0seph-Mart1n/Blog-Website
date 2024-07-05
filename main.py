@@ -12,6 +12,7 @@ from sqlalchemy import Integer, String, Text, ForeignKey
 from functools import wraps
 from werkzeug.security import generate_password_hash, check_password_hash
 import smtplib
+import os
 # Import your forms from the forms.py
 from forms import CreatePostForm, RegisterForm, LoginForm, CommentForm
 
@@ -30,11 +31,11 @@ This will install the packages from the requirements.txt for this project.
 '''
 
 #Email and Password
-my_email = 'youremail'
-password = "yourpassword"
+my_email = os.environ.get('EMAIL')
+password = os.environ.get("PASSWORD")
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'yoursecretkey'
+app.config['SECRET_KEY'] = os.environ.get('FLASK_KEY')
 ckeditor = CKEditor(app)
 Bootstrap5(app)
 
